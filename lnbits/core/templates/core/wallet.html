@@ -542,6 +542,18 @@
               :label="$t('memo')"
             ></q-input>
             <div v-if="receive.status == 'pending'" class="row q-mt-lg">
+              <q-icon
+                name="content_paste"
+                color="grey"
+                class="q-mt-xs q-ml-sm q-mr-auto"
+                v-if="parse.copy.show"
+                @click="showParseDialog"
+              >
+                <q-tooltip>
+                  <span v-text="$t('paste_from_clipboard')"></span>
+                </q-tooltip>
+              </q-icon>
+
               <q-btn
                 unelevated
                 color="primary"
